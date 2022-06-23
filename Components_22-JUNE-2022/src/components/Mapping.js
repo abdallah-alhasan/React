@@ -8,9 +8,9 @@ function Mapping(){
     const mapped = Fruits.map((el) => {
         return (
             <tr>
-                <td scope="row">{el.id}</td>
-                <td scope="row">{el.name}</td>
-                <td scope="row">{el.color}</td>
+                <td >{el.id}</td>
+                <td >{el.name}</td>
+                <td >{el.color}</td>
             </tr>
         )
     })
