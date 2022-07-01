@@ -18,7 +18,7 @@ function Movie() {
             return data
         }
         movie.status_code === 34 ?  getShow()  :  getMovie()
-        
+        const lettt= 'f'
     },[id])
     console.log(movie)
     const styles = {
