@@ -46,14 +46,14 @@ const tending = trending.map(movie => <a href={`/movie/${movie.id}`}><img src={`
 return (
 <section className="main-container" >
 <div className="location" id="home">
-    <h1 id="home">Popular on Netflix</h1>
+    <h1 id="popular">Popular on Netflix</h1>
     <div className="box">
         {tending}
     </div>
 </div>
 
 
-<h1 id="myList">Trending Now</h1>
+<h1 id="trending">Trending Now</h1>
 <div className="box">
     {moviesList}
 </div>

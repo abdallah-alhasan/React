@@ -9,15 +9,15 @@ function Movie() {
             const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcS`)
             const data = await res.json()
             setMovie(data) 
-            return data
         }
         async function getShow(){
             const res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcS`)
             const data = await res.json()
             setMovie(data) 
-            return data
         }
-        movie.status_code === 34 ?  getShow()  :  getMovie()
+        getMovie()
+        movie.success === false ? getShow()   :  getMovie()
+        
     },[id])
     console.log(movie)
     const styles = {
