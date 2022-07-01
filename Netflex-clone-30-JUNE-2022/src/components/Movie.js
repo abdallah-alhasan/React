@@ -8,10 +8,19 @@ function Movie() {
         async function getMovie(){
             const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcS`)
             const data = await res.json()
-            setMovie(data)
+            setMovie(data) 
+            return data
         }
-        getMovie()
+        async function getShow(){
+            const res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcS`)
+            const data = await res.json()
+            setMovie(data) 
+            return data
+        }
+        movie.status_code === 34 ?  getShow()  :  getMovie()
+        
     },[id])
+    console.log(movie)
     const styles = {
         background:`linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)), url('https://image.tmdb.org/t/p/original${movie.poster_path}')`,
         backgroundPosition:' center',
@@ -24,7 +33,7 @@ return (
 <div className="container" style={styles}>
 <div className="cellphone-container">    
     <div className="movie">       
-    <div className="menu"><i className="material-icons"></i></div>
+    <div className="menu"><i class="fa-solid fa-bookmark"></i></div>
     <div className="movie-img" style={{backgroundImage: `url(${Background})`}}  ></div>
     <div className="text-movie-cont">
         <div className="mr-grid">
@@ -43,8 +52,7 @@ return (
         </div>
         <div className="col2">
             <ul className="movie-likes">
-            <li><i className="material-icons">&#xE813;</i>124</li>
-            <li><i className="material-icons">&#xE813;</i>3</li>
+            <li><i class="fa-solid fa-heart"></i>{movie.vote_count}</li>
             </ul>
         </div>
         </div>
@@ -59,13 +67,13 @@ return (
         </div>
         </div>
         <div className="mr-grid action-row" style={{margin:'0'}}>
-        <div className="col2"><div className="watch-btn"><h3><i className="material-icons">&#xE037;</i>WATCH TRAILER</h3></div>
+        <div className="col2"><div className="watch-btn"><a href={movie.homepage} ><h3><i class="fa-solid fa-play"></i>WATCH TRAILER</h3></a></div>
         </div>
-        <div className="col6 action-btn"><i className="material-icons">&#xE161;</i>
+        <div className="col6 action-btn"><i class="fa-solid fa-save"></i>
         </div>
-        <div className="col6 action-btn"><i className="material-icons">&#xE866;</i>
+        <div className="col6 action-btn"><i class="fa-solid fa-bookmark"></i>
         </div>
-        <div className="col6 action-btn"><i className="material-icons">&#xE80D;</i>
+        <div className="col6 action-btn"><i class="fa-solid fa-share"></i>
         </div>
         </div>
     </div>
