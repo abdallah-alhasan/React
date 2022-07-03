@@ -1,6 +1,6 @@
 import './App.css';
 import {useAuth} from  './Hooks/useAuth'
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 
 function App() {
   const [formData, setFormData] = useState({username:'', password:''})
@@ -20,11 +20,11 @@ function App() {
 
   return (
     <div className="container">
-        <div class="form-group col-6">
-            <label for="inputEmail">Username</label>
+        <div className="form-group col-6">
+            <label htmlFor="inputEmail">Username</label>
             <input 
             type="Username" 
-            class="form-control" 
+            className="form-control" 
             id="Username" 
             placeholder="Username"
             name='username'
@@ -33,11 +33,11 @@ function App() {
             />
 
         </div>
-        <div class="form-group col-6 mb-3">
-            <label for="inputPassword">Password</label>
+        <div className="form-group col-6 mb-3">
+            <label htmlFor="inputPassword">Password</label>
             <input 
             type="password" 
-            class="form-control" 
+            className="form-control" 
             id="inputPassword" 
             placeholder="Password"
             name='password'
@@ -45,7 +45,7 @@ function App() {
             onChange={handleChange}
             />
         </div>
-        <button type="submit" onClick={handleClick} class="btn btn-primary">Sign in</button>
+        <button type="submit" onClick={handleClick} className="btn btn-primary">Sign in</button>
     </div>
   );
 }
