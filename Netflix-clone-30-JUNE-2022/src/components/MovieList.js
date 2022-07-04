@@ -6,7 +6,7 @@ function MovieList() {
     const [tvShows, setTvShows] = useState([])
     useEffect(() => {
         async function getShows(){
-            const res = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcS')
+            const res = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=aa4bd1bce4554a2e53b3fc7f8136422c&language=en-US/61PVJ06oecwvcBisoAQu6SDfdcsS')
             const data = await res.json()
             setTvShows(data.results)
         }

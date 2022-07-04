@@ -5,7 +5,11 @@ export function useAuth(data) {
         username:'test',
         password:'1234',
     })
-    let message = ''
-    data.username === auth.username && data.password === auth.password ? message = console.log('logged in successfully') : message = console.log('login failed')
-    return message
+    let isLoggedIn = false
+        if (data.username === auth.username && data.password === auth.password) {
+            sessionStorage.setItem('logged', 'true') 
+            isLoggedIn = true
+        }
+    return isLoggedIn
+
 }

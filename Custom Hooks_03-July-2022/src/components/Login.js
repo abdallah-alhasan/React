@@ -1,7 +1,7 @@
 import {useAuth} from  '../Hooks/useAuth'
 import {useState } from 'react';
 
-function Login() {
+function Login(props) {
 const [formData, setFormData] = useState({username:'', password:''})
 const check = useAuth({username:formData.username , password:formData.password})
 
@@ -11,10 +11,9 @@ const handleChange = (event) => {
     ...prevData,
     [name]: value
 }))
-console.log(formData)
 }
 const handleClick = () => {
-    return check
+    check && props.checker()  
 }
 
 return (
